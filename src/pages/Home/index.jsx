@@ -9,12 +9,23 @@ export function Home() {
         <Container>
           <Header />
             <UserInterface>
-                <h1>Meus Filmes</h1>
-                <Button icon={FiPlus} title="Adicionar novo filme" />
+                <h1>Meus filmes</h1>
+                <Button icon={FiPlus} title="Adicionar filme" />
             </UserInterface>
 
             <Content>
-                <Note data={{title: 'React', resume: 'Sexo sexo sexo', tags: [{id: '1', name:'react'}, {id: '2', name:'node'}]}} />
+                <Note data={{title: 'Interestellar', 
+                resume: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se...', 
+                tags: [{id: '1', name:'Ficção Científica'}, {id: '2', name:'Drama'}, {id: '3', name:'Família'}]}} 
+                />
+                <Note data={{title: 'Interestellar', 
+                resume: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se...', 
+                tags: [{id: '1', name:'Ficção Científica'}, {id: '2', name:'Drama'}, {id: '3', name:'Família'}]}} 
+                />
+                <Note data={{title: 'Interestellar', 
+                resume: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se...', 
+                tags: [{id: '1', name:'Ficção Científica'}, {id: '2', name:'Drama'}, {id: '3', name:'Família'}]}} 
+                />
             </Content>
         </Container>
     )

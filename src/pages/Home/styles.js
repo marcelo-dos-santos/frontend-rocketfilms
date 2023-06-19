@@ -14,6 +14,8 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     grid-area: content;
+    margin: 0 110px;
+    overflow-y: auto;
 `
 
 export const UserInterface = styled.div`
@@ -21,7 +23,7 @@ export const UserInterface = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 50px 123px;
-    gap: 750px;
+    gap: 795px;
 
     > h1 {
         font-weight: 400;

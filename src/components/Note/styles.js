@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.button`
     width: 100%;
-    background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
+    background-color: ${({theme}) => theme.COLORS.BACKGROUND_NOTE};
     border: none;
     border-radius: 10px;
     padding: 22px;
@@ -20,12 +20,31 @@ export const Container = styled.button`
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
-        color: ${({theme}) => theme.COLORS.WHITE};
+        color: ${({theme}) => theme.COLORS.GRAY_100};
+        text-align: left;
+        margin-top: 15px;
     }
 
     > footer {
         width: 100%;
         display: flex;
         margin-top: 24px;
+        gap: 8px;
     }
+`
+
+export const Rating = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: left;
+    margin-top: 8px;
+
+    .Star{
+        fill: gray;
+        color: ${({theme}) => theme.COLORS.PINK};
+
+    &.isActive {
+        fill: ${({theme}) => theme.COLORS.PINK};
+    }
+}
 `

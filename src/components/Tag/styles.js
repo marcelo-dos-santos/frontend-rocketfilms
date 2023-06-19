@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding: 8px 16px;
   gap: 8px;
   height: 30px;
-  background: #282124;
+  background: #312E38;
   color: ${({theme}) => theme.COLORS.GRAY_300};
   border-radius: 8px;
   flex: none;
