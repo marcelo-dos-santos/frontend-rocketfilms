@@ -75,6 +75,7 @@ export const Stars = styled.div`
 
     .Star{
         fill: gray;
+        color: ${({theme}) => theme.COLORS.PINK};
 
     &.isActive {
         fill: ${({theme}) => theme.COLORS.PINK};

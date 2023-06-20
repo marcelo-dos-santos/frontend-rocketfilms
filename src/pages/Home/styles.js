@@ -23,7 +23,7 @@ export const UserInterface = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 50px 123px;
-    gap: 795px;
+    gap: 56vw;
 
     > h1 {
         font-weight: 400;
@@ -31,6 +31,7 @@ export const UserInterface = styled.div`
         line-height: 42px;
         color: ${({theme}) => theme.COLORS.WHITE};
         white-space: nowrap;
+        margin-right: 10px;
     }
 `
 
