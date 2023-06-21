@@ -10,6 +10,11 @@ export const Container = styled.button`
     border-radius: 10px;
     font-weight: 400;
 
+    &.deleteFilm {
+        background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+        color: ${({theme}) => theme.COLORS.PINK};
+    }
+
     &:disabled {
         opacity: 0.5;
     }

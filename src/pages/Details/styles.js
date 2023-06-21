@@ -13,6 +13,20 @@ export const Container = styled.div`
         grid-area: content;
         overflow-y: auto;
         padding: 40px 0;
+
+        ::-webkit-scrollbar {
+        width: 8px;
+        background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background-color: #FF859B;
+        border-radius: 8px;
+        }   
+
+        ::-webkit-scrollbar-thumb:hover {
+        background-color: #FF6C85;
+        }
     }
 `
 

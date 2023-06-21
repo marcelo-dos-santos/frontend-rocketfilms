@@ -1,4 +1,4 @@
-import { Container, Content, UserInterface } from "./styles";
+import { Container, Content, UserInterface, NewFilm } from "./styles";
 import { FiPlus } from "react-icons/fi";
 import { Header } from "../../components/Header"
 import { Button } from "../../components/Button"
@@ -10,7 +10,11 @@ export function Home() {
           <Header />
             <UserInterface>
                 <h1>Meus filmes</h1>
+                <NewFilm to="/new">
+                <div className="addButton">
                 <Button icon={FiPlus} title="Adicionar filme" />
+                </div>
+                </NewFilm>
             </UserInterface>
 
             <Content>

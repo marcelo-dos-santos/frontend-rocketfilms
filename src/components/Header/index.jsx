@@ -3,6 +3,7 @@ import { Input } from "../../components/Input"
 import { ButtonText } from "../ButtonText";
 
 
+
 export function Header() {
     return(
         <Container>
@@ -16,7 +17,7 @@ export function Header() {
                 />
             </Search>
 
-            <Profile>
+            <Profile to="/profile">
                 <div>
                     <strong>Marcelo</strong>
                     <span><ButtonText title="sair" /></span>

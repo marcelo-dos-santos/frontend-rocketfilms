@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     width: 100%;
@@ -16,6 +17,20 @@ export const Content = styled.div`
     grid-area: content;
     margin: 0 110px;
     overflow-y: auto;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background-color: #FF859B;
+        border-radius: 8px;
+        }   
+
+        ::-webkit-scrollbar-thumb:hover {
+        background-color: #FF6C85;
+        }
 `
 
 export const UserInterface = styled.div`
@@ -24,6 +39,10 @@ export const UserInterface = styled.div`
     align-items: center;
     margin: 50px 123px;
     gap: 56vw;
+
+    .addButton {
+        width: fit-content;
+    }
 
     > h1 {
         font-weight: 400;
@@ -35,3 +54,6 @@ export const UserInterface = styled.div`
     }
 `
 
+export const NewFilm = styled(Link)`
+    width: 100;
+`

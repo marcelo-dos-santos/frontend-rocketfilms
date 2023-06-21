@@ -20,6 +20,16 @@ export const Container = styled.div`
         &:placeholder {
             color: ${({theme}) => theme.COLORS.GRAY_300};
         }
+
+        &[type="number"]::-webkit-inner-spin-button,
+        &[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        input[type="number"] {
+        -moz-appearance: textfield;
+        }
     }
 
     > svg {
