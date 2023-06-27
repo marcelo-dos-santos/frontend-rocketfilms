@@ -1,10 +1,13 @@
 import { Container, Profile, Logo, Search } from "./styles";
 import { Input } from "../../components/Input"
 import { ButtonText } from "../ButtonText";
+import { useAuth } from "../../hooks/auth";
 
 
 
 export function Header() {
+    const {signOut} = useAuth();
+
     return(
         <Container>
             <Logo>
@@ -20,7 +23,7 @@ export function Header() {
             <Profile to="/profile">
                 <div>
                     <strong>Marcelo</strong>
-                    <span><ButtonText title="sair" /></span>
+                    <span><ButtonText title="sair" onClick={signOut} /></span>
                 </div>
                 <img src="https://github.com/marcelo-dos-santos.png" alt="Foto do usuario" />
             </Profile>
