@@ -88,7 +88,6 @@ export const Stars = styled.div`
     gap: 10px;
 
     .Star{
-        fill: gray;
         color: ${({theme}) => theme.COLORS.PINK};
 
     &.isActive {

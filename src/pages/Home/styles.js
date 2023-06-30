@@ -38,7 +38,7 @@ export const UserInterface = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 50px 123px;
-    gap: 56vw;
+    gap: 52vw;
 
     .addButton {
         width: fit-content;
@@ -56,4 +56,11 @@ export const UserInterface = styled.div`
 
 export const NewFilm = styled(Link)`
     width: 100;
+`
+
+export const Search  = styled.div`
+    width: 630px;
+    display: flex;
+    align-self: center;
+    align-items: center;
 `

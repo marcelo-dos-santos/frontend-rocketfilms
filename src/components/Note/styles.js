@@ -48,3 +48,17 @@ export const Rating = styled.div`
     }
 }
 `
+
+export const Stars = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .Star{
+        color: ${({theme}) => theme.COLORS.PINK};
+
+    &.isActive {
+        fill: ${({theme}) => theme.COLORS.PINK};
+    }
+}
+`

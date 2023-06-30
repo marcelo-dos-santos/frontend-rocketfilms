@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export function Header() {
+export function HeaderHome({children}) {
     
     
     const {signOut, user} = useAuth();
@@ -19,14 +19,13 @@ export function Header() {
         signOut();
     }
 
-
-
     return(
         <Container>
             <Logo>
                 <span>RocketMovies</span>
             </Logo>
 
+            {children}
 
             <Profile to="/profile">
                 <div>

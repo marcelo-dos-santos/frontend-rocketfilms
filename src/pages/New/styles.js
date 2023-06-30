@@ -8,6 +8,12 @@ export const Container = styled.div`
     "header"
     "content";
 
+    .mark-row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
     > main {
         overflow-y: auto;
         grid-area: content;
@@ -29,7 +35,7 @@ export const Container = styled.div`
 `
 
 export const Form = styled.form`
-    max-width: 1335px;
+    max-width: 876px;
     margin: 38px auto;
 
     .input-row {
