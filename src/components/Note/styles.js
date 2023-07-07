@@ -40,7 +40,6 @@ export const Rating = styled.div`
     margin-top: 8px;
 
     .Star{
-        fill: gray;
         color: ${({theme}) => theme.COLORS.PINK};
 
     &.isActive {

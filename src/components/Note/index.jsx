@@ -16,7 +16,7 @@ export function Note({data, rating, ...rest}) {
           ))}
         </Stars>
             </Rating>
-            <p>{data.description}</p>
+            <p>{data.description.length > 260 ? `${data.description.substring(0, 260)}...` : data.description}</p>
             { data.tags &&
         <footer>
         {data.tags.map((tag) => (

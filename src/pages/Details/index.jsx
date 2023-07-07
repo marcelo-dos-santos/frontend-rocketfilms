@@ -3,7 +3,7 @@ import {format} from "date-fns"
 import { Header } from "../../components/Header"
 import { Tag } from "../../components/Tag"
 import { ButtonText } from "../../components/ButtonText"
-import { FiArrowLeft, FiStar, FiClock} from "react-icons/fi"
+import { FiArrowLeft, FiStar, FiClock, FiRefreshCcw} from "react-icons/fi"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { api } from "../../services"
@@ -23,9 +23,13 @@ export function Details() {
   const rating = data?.rating ?? 0;
 
 function handleBack(){
-  navigate(-1)
+  navigate("/")
 }
-  
+
+async function handleUpdate() {
+    navigate(`/update/${params.id}`);
+}
+
 
 useEffect(() => {
   async function fetchNote() {
@@ -44,8 +48,11 @@ useEffect(() => {
         <main>
           <Content>
               <span>
-                <FiArrowLeft />
-                <ButtonText title="Voltar" isActive onClick={handleBack} />
+                <div>
+                  <FiArrowLeft />
+                  <ButtonText title="Voltar" isActive onClick={handleBack} />
+                </div>
+                <ButtonText title="Editar Nota" onClick={handleUpdate} />
               </span>
               <Title>
               <h1>{data.title}</h1>
@@ -57,11 +64,18 @@ useEffect(() => {
               </Title>
                 <Author>
                   <img src={avatarUrl} alt="Foto do usuario" />
-                  <p>Por {user.name}</p>
-                  <FiClock />
-                  <p>{format(new Date(data.created_at), "dd/MM/yyyy 'às' HH:mm")}</p>
+                  <div>
+                    <p>Por {user.name}</p>
+                    <FiClock />
+                    <p>{format(new Date(data.created_at), "dd/MM/yyyy 'às' HH:mm")}</p>
+                    {data.created_at !== data.updated_at && (
+                        <div className="updated">
+                          <FiRefreshCcw />
+                          <p>{format(new Date(data.updated_at), "dd/MM/yyyy 'às' HH:mm")}</p>
+                        </div>  
+                    )}
+                  </div>
                 </Author>
-
               {  data.tags &&              
                 <TagFilm>
                 {  
