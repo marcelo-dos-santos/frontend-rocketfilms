@@ -64,18 +64,16 @@ useEffect(() => {
               </Title>
                 <Author>
                   <img src={avatarUrl} alt="Foto do usuario" />
-                  <div>
                     <p>Por {user.name}</p>
                     <FiClock />
                     <p>{format(new Date(data.created_at), "dd/MM/yyyy 'às' HH:mm")}</p>
-                    {data.created_at !== data.updated_at && (
-                        <div className="updated">
-                          <FiRefreshCcw />
-                          <p>{format(new Date(data.updated_at), "dd/MM/yyyy 'às' HH:mm")}</p>
-                        </div>  
-                    )}
-                  </div>
                 </Author>
+                    {new Date(data.updated_at) > new Date(data.created_at) && (
+                    <div className="updated">
+                      <FiRefreshCcw />
+                      <p>{format(new Date(data.updated_at), "dd/MM/yyyy 'às' HH:mm")}</p>
+                    </div>
+                  )}
               {  data.tags &&              
                 <TagFilm>
                 {  

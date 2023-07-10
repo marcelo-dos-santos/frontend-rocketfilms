@@ -34,6 +34,9 @@ async function handleNewFilm() {
     if(!title) {
         return alert("Digite o nome do filme")
     };
+    if(isNaN(rating) || rating > 5 || rating < 0) {
+        return alert("Rating tem que ser um número de 0 a 5")
+    };
     if(newTag) {
         return alert("Existem tags para serem adicionados! Clique para adicionar ou deixe o campo vazio.")
     };
@@ -43,6 +46,12 @@ async function handleNewFilm() {
     navigate("/");
 }
 
+function handleBack() {
+    confirm("Deseja realmente não adicionar o filme?");
+    if(true) {
+        navigate(-1);
+    }
+}
 
     return(
         <Container>
@@ -93,7 +102,7 @@ async function handleNewFilm() {
                             />
                         </div>
                     <div className="button-row">
-                        <Button className="deleteFilm" title="Excluir Filme" />
+                        <Button className="deleteFilm" title="Excluir Filme" onClick={handleBack} />
                         <Button title="Salvar Alterações" onClick={handleNewFilm} />
                     </div>
                 </Form>

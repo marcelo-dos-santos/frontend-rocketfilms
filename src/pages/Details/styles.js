@@ -48,6 +48,14 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
+  .updated {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
   > span {
     display: flex;
     align-items: center;
@@ -110,15 +118,15 @@ export const Author = styled.div`
   margin-top: 24px;
   font-size: 16px;
 
+  > svg {
+      color: ${({ theme }) => theme.COLORS.PINK};
+    }
+
   > div {
     display: flex;
     gap: 8px;
     align-items: center;
     font-size: 16px;
-
-    > svg {
-      color: ${({ theme }) => theme.COLORS.PINK};
-    }
 
     > p {
       margin: 0;

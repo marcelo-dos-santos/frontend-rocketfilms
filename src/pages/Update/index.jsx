@@ -9,7 +9,6 @@ import { Section } from "../../components/Section";
 import { Button } from "../../components/Button";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useAuth } from "../../hooks/auth";
 import { api } from "../../services";
 
 export function Update() {
@@ -22,7 +21,6 @@ export function Update() {
   const [tags, setTags] = useState([]);
 
   const params = useParams();
-  const { user } = useAuth();
   const navigate = useNavigate();
 
 
@@ -44,7 +42,9 @@ export function Update() {
         "Existem tags para serem adicionados! Clique para adicionar ou deixe o campo vazio."
       );
     }
-
+    if(isNaN(rating) || rating > 5 || rating < 0) {
+      return alert("Rating tem que ser um número de 0 a 5")
+    };
     await api.patch(`/notes/${params.id}`, {
       title,
       description,
@@ -57,6 +57,14 @@ export function Update() {
 
   function handleBack(){
     navigate(-1)
+  }
+
+  function handleDelete(){
+    confirm("Voce realmente quer excluir o filme?");
+    if(true) {
+      api.delete(`/notes/${params.id}`)
+      navigate("/")
+    }
   }
 
   useEffect(() => {
@@ -130,7 +138,11 @@ export function Update() {
             />
           </div>
           <div className="button-row">
-            <Button className="deleteFilm" title="Excluir Filme" />
+            <Button 
+            className="deleteFilm" 
+            title="Excluir Filme"
+            onClick={handleDelete}
+            />
             <Button
               title="Salvar Alterações"
               onClick={handleUpdateFilm}
